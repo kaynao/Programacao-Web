@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim de Notas - Laboratório</title>
+    <style>
+        /* Estilos CSS Básicos para Melhorar o Visual da Tabela */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #ffffff;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 10px;
+            text-align: left;
+        }
+        /* Estilizando as Seções Semânticas */
+        thead {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2; /* Efeito zebrado */
+        }
+        tfoot {
+            background-color: #333333; /* Cinza Escuro */
+            color: white;
+            font-weight: bold;
+        }
+        caption {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho da Página -->
+    <header>
+        <h1>Exercício Prático: Tabela de Notas</h1>
+        <p>Tabela estruturada utilizando as tags semânticas <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> e <code>&lt;tfoot&gt;</code> [1].</p>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <table>
+            <!-- Título da Tabela para Acessibilidade -->
+            <caption>Boletim de Notas - Turma de Programação Web (2026)</caption>
+            
+            <!-- 1. Cabeçalho da Tabela -->
+            <thead>
+                <tr>
+                    <th scope="col">Aluno</th>
+                    <th scope="col">Nota 1 (Trabalho)</th>
+                    <th scope="col">Nota 2 (Prova)</th>
+                    <th scope="col">Média Final</th>
+                </tr>
+            </thead>
+            
+            <!-- 2. Dados Principais da Tabela -->
+            <tbody>
+                <tr>
+                    <td>Ana Silva</td>
+                    <td>8.5</td>
+                    <td>9.0</td>
+                    <td>8.8</td>
+                </tr>
+                <tr>
+                    <td>Bruno Santos</td>
+                    <td>7.0</td>
+                    <td>6.5</td>
+                    <td>6.7</td>
+                </tr>
+                <tr>
+                    <td>Carlos Oliveira</td>
+                    <td>9.5</td>
+                    <td>8.0</td>
+                    <td>8.6</td>
+                </tr>
+                <tr>
+                    <td>Diana Costa</td>
+                    <td>6.0</td>
+                    <td>7.5</td>
+                    <td>6.9</td>
+                </tr>
+            </tbody>
+            
+            <!-- 3. Rodapé com Médias e Resumo -->
+            <tfoot>
+                <tr>
+                    <td>Média Geral da Turma</td>
+                    <td>7.75</td>
+                    <td>7.75</td>
+                    <td>7.75</td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+
+</body>
+</html>
