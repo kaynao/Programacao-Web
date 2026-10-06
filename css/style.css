@@ -1,0 +1,74 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+  text-align: center;
+  background: linear-gradient(135deg, #ff4e00, #d90429); 
+  color: white; 
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+h1 a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-pedido{
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-pedido:hover { background-color: #d90429;
+    transform: scale(1.05);
+}
+
+.btn-horarios{
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-horarios:hover { background-color: #d90429;
+    transform: scale(1.05);
+}
+
+.btn-cardapio{
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cardapio:hover { background-color: #d90429;
+    transform: scale(1.05);
+}
+
