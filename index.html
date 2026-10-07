@@ -1,38 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IFome</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IFome! - Restaurante & Delivery</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pedidoCSS.css" />
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+  </head>
 
-<body>
-
+  <body>
+    <!-- Cabeçalho do Site -->
     <header id="topo">
-        <h1><a href="#topo">IFome!</a></h1>
+      <h1><a href="#topo">IFome!</a></h1>
 
-        <nav> 
-            <ul>
-                <li class="btn-cardapio"><a href="#cardapio">Cardápio 🍽️</a></class></li>
-                <li class="btn-horarios"><a href="#horarios">Horários &amp; Entregas ✉️</a></class></li>
-                <li class="btn-pedido"><a href="#reserva">Fazer Pedido / Reserva 📆</a></class></li>
-            </ul>
-        </nav>
+      <!-- Menu de Navegação -->
+      <nav>
+        <ul>
+          <li class="btn-cardapio"><a href="#cardapio">Cardápio 🍽️</a></li>
+          <li class="btn-horarios">
+            <a href="#entregas">Horários &amp; Entregas 🛵</a>
+          </li>
+          <li class="btn-pedido">
+            <a href="#reserva">Fazer Pedido / Reserva 📆</a>
+          </li>
+        </ul>
+      </nav>
 
-        <div class="icones-usuario">
-            <a href="#perfil" aria-label="Perfil"> <span class="material-symbols-outlined">person</span></a> 
-            <a href="#favoritos" aria-label="Favoritos"> <span class="material-symbols-outlined">favorite</span></a>
-            <a href="#carrinho" aria-label="Carrinho"> <span class="material-symbols-outlined">shopping_cart</span></a>
-        </div>
-        
+      <!-- Botões de Usuário -->
+      <div class="icones-usuario">
+        <a href="#perfil" class="btn-icone" aria-label="Perfil">
+          <span class="material-symbols-outlined">person</span>
+        </a>
+        <a href="#favoritos" class="btn-icone" aria-label="Favoritos">
+          <span class="material-symbols-outlined">favorite</span>
+        </a>
+        <a href="#carrinho" class="btn-icone" aria-label="Carrinho">
+          <span class="material-symbols-outlined">shopping_cart</span>
+        </a>
+      </div>
     </header>
-    
+
     <main>
-        <h2 id="cardapio">Nosso Cardápio 🍽️</h2>
-        <iframe src="cardapio.html" width="100%" height="800px" frameborder="0"></iframe>
+      <!-- SEÇÃO 1: CARDÁPIO ENQUADRADO EM GRID -->
+      <section id="cardapio">
+        <h2>Nosso Cardápio 🍽️</h2>
+        <div class="cardapio-grid">
+          <article class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Pizza de Calabresa"/>
+            <h3>Pizza de Calabresa</h3>
+            <p>Molho de tomate, muçarela, calabresa fatiada e cebola.</p>
+            <span class="preco">R$ 45,00</span>
+            <button class="btn-pedido">Pedir Agora</button>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Pizza 4 Queijos"/>
+            <h3>Pizza 4 Queijos</h3>
+            <p>Muçarela, provolone, queijo prato e gorgonzola.</p>
+            <span class="preco">R$ 50,00</span>
+            <button class="btn-pedido">Pedir Agora</button>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Suco de Laranja"/>
+            <h3>Suco de Laranja</h3>
+            <p>Suco 100% natural da fruta (500ml).</p>
+            <span class="preco">R$ 10,00</span>
+            <button class="btn-pedido">Pedir Agora</button>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Pudim de Leite"/>
+            <h3>Pudim de Leite</h3>
+            <p>Fatia individual de pudim artesanal com calda.</p>
+            <span class="preco">R$ 12,00</span>
+            <button class="btn-pedido">Pedir Agora</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 2: HORÁRIOS & ENTREGAS COM TABELA E MAPA -->
+      <section id="entregas" class="container-entregas">
+        <h2>Horários & Taxas de Entrega 🛵</h2>
+
+        <br />
+
+        <div class="status-badge aberto">
+          <span class="bolinha-status"></span>
+          <p>
+            <strong>Aberto agora</strong> • Tempo estimado de entrega: 30-45 min
+          </p>
+        </div>
+
+        <table class="tabela-entregas">
+          <caption>
+            Valores e prazos médios de entrega por região
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Nome Rua</th>
+              <th scope="col">Bairro</th>
+              <th scope="col">Taxa de Entrega</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>R. Dorvina Dornela de Jesus</td>
+              <td>Vila</td>
+              <td>Grátis</td>
+            </tr>
+            <tr>
+              <td>R. Francisco Vieira Bomtempo</td>
+              <td>São José</td>
+              <td>R$ 3,00</td>
+            </tr>
+            <tr>
+              <td>R. Me. Cabrini</td>
+              <td>Centro</td>
+              <td>R$ 7,00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">
+                * Pedidos acima de R$ 100,00 possuem frete grátis para qualquer
+                região.
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <div class="container-mapa">
+          <h3>Nossa Área de Cobertura</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.4881656884304!2d-43.16072882666287!3d-21.2521357532101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa2f88a153bb1a3%3A0xacfc0b3cff04ce91!2sIF%20Sudeste%20MG%20-%20Campus%20Rio%20Pomba!5e0!3m2!1spt-BR!2sbr!4v1791397216531!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 3: FORMULÁRIO DE PEDIDOS & RESERVAS -->
+      <section id="reserva" class="container-form">
+        <h2>Fazer Pedido ou Reserva 📆</h2>
+        <p class="subtitulo-form">
+          Preencha os dados abaixo para concluir seu pedido ou agendar sua mesa.
+        </p>
+
+        <form action="#" method="post" class="form-pedido">
+          <fieldset>
+            <legend>1. Dados de Contato</legend>
+            <div class="campo">
+              <label for="nome">Nome Completo:</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome"
+                required
+              />
+            </div>
+
+            <div class="campo-duplo">
+              <div class="campo">
+                <label for="telefone">WhatsApp / Telefone:</label>
+                <input
+                  type="tel"
+                  id="telefone"
+                  name="telefone"
+                  placeholder="(17) 99999-9999"
+                  required
+                />
+              </div>
+              <div class="campo">
+                <label for="email">E-mail:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="seuemail@exemplo.com"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Tipo de Solicitação</legend>
+            <div class="opcoes-radio">
+              <label
+                ><input
+                  type="radio"
+                  name="tipo_servico"
+                  value="delivery"
+                  checked
+                />
+                🛵 Entrega em Domicílio</label
+              >
+              <label
+                ><input type="radio" name="tipo_servico" value="reserva" /> 🍽️
+                Reserva de Mesa</label
+              >
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Agendamento e Detalhes</legend>
+            <div class="campo-triplo">
+              <div class="campo">
+                <label for="data">Data Desejada:</label>
+                <input type="date" id="data" name="data" required />
+              </div>
+              <div class="campo">
+                <label for="hora">Horário:</label>
+                <input type="time" id="hora" name="hora" required />
+              </div>
+              <div class="campo">
+                <label for="pessoas">Pessoas na Mesa:</label>
+                <input
+                  type="number"
+                  id="pessoas"
+                  name="pessoas"
+                  min="1"
+                  max="20"
+                  value="1"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="pagamento">Forma de Pagamento Prevista:</label>
+              <select id="pagamento" name="pagamento" required>
+                <option value="" disabled selected>
+                  Selecione uma opção...
+                </option>
+                <option value="pix">Pix</option>
+                <option value="cartao_credito">Cartão de Crédito</option>
+                <option value="cartao_debito">Cartão de Débito</option>
+                <option value="dinheiro">Dinheiro (Espécie)</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Observações</legend>
+            <div class="campo">
+              <label for="observacoes"
+                >Instruções de Entrega ou Observações:</label
+              >
+              <textarea
+                id="observacoes"
+                name="observacoes"
+                rows="4"
+                placeholder="Ex: Ponto da carne, sem cebola, complemento do endereço..."
+              ></textarea>
+            </div>
+          </fieldset>
+
+          <div class="botoes-form">
+            <input
+              type="submit"
+              value="Confirmar Pedido / Reserva"
+              class="btn-pedido"
+            />
+            <input type="reset" value="Limpar Campos" class="btn-limpar" />
+          </div>
+        </form>
+      </section>
     </main>
 
-</body>
+    <!-- Rodapé Semântico do Site -->
+    <footer>
+      <p>&copy; 2026 IFome! - Todos os direitos reservados.</p>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazer Pedido / Reserva - IFome!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pedidoCSS.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+</head>
+<body>
+    <main class="container-form">
+        <h2>Fazer Pedido ou Reserva 🛎️</h2>
+        <p class="subtitulo-form">Preencha os dados abaixo para concluir seu pedido ou agendar sua mesa.</p>
+
+        <form action="#" method="post" class="form-pedido">
+            <fieldset>
+                <legend>1. Dados de Contato</legend>
+                <div class="campo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required autofocus>
+                </div>
+                <div class="campo-duplo">
+                    <div class="campo">
+                        <label for="telefone">WhatsApp / Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(17) 99999-9999" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. Tipo de Solicitação</legend>
+                <div class="opcoes-radio">
+                    <label>
+                        <input type="radio" name="tipo_servico" value="delivery" checked> 
+                        🛵 Entrega em Domicílio (Delivery)
+                    </label>
+                    <label>
+                        <input type="radio" name="tipo_servico" value="reserva"> 
+                        🍽️ Reserva de Mesa no Restaurante
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>3. Agendamento e Detalhes</legend>
+                
+                <div class="campo-triplo">
+                    <div class="campo">
+                        <label for="data">Data Desejada:</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="hora">Horário:</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="pessoas">Nº de Pessoas / Pessoas na Mesa:</label>
+                        <input type="number" id="pessoas" name="pessoas" min="1" max="20" value="1" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="pagamento">Forma de Pagamento Prevista:</label>
+                    <select id="pagamento" name="pagamento" required>
+                        <option value="" disabled selected>Selecione uma opção...</option>
+                        <optgroup label="Pagamento Online / Entrega">
+                            <option value="pix">Pix</option>
+                            <option value="cartao_credito">Cartão de Crédito</option>
+                            <option value="cartao_debito">Cartão de Débito</option>
+                            <option value="dinheiro">Dinheiro (Espécie)</option>
+                        </optgroup>
+                        <optgroup label="Benefícios">
+                            <option value="vr">Vale Refeição (VR / VA)</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>4. Observações ou Itens do Pedido</legend>
+                <div class="campo">
+                    <label for="observacoes">Observações (Restrições alimentares, ponto da carne, endereço completo):</label>
+                    <textarea id="observacoes" name="observacoes" rows="4" placeholder="Ex: Sem cebola na pizza, entregar no bloco B apto 302..."></textarea>
+                </div>
+            </fieldset>
+
+                <div class="botoes-form">
+                <input type="submit" value="Confirmar Pedido / Reserva" class="btn-pedido">
+                <input type="reset" value="Limpar Campos" class="btn-limpar">
+            </div>
+
+        </form>
+    </main>
+
+</body>
+</html>
