@@ -22,13 +22,9 @@
       <!-- Menu de Navegação -->
       <nav class="navigation">
         <ul>
-          <li class="btn-cardapio"><a href="#cardapio">Cardápio 🍽️</a></li>
-          <li class="btn-horarios">
-            <a href="#entregas">Horários &amp; Entregas 🛵</a>
-          </li>
-          <li class="btn-pedido">
-            <a href="#reserva">Fazer Pedido / Reserva 📆</a>
-          </li>
+          <li><a href="#cardapio">Cardápio 🍽️</a></li>
+          <li><a href="#entregas">Horários &amp; Entregas 🛵</a></li>
+          <li><a href="#reserva">Carrinho &amp; Pedido 📆</a></li>
         </ul>
       </nav>
 
@@ -40,8 +36,9 @@
         <a href="#favoritos" class="btn-icone" aria-label="Favoritos">
           <span class="material-symbols-outlined">favorite</span>
         </a>
-        <a href="#carrinho" class="btn-icone" aria-label="Carrinho">
+        <a href="#area-carrinho" class="btn-icone btn-carrinho-topo" aria-label="Carrinho">
           <span class="material-symbols-outlined">shopping_cart</span>
+          <span id="contador-carrinho" class="badge-carrinho">0</span>
         </a>
       </div>
     </header>
@@ -50,205 +47,149 @@
       <!-- SEÇÃO 1: CARDÁPIO ENQUADRADO EM GRID -->
       <section id="cardapio">
         <h2>Nosso Cardápio 🍽️</h2>
-        <br>
 
+        <!-- CATEGORIA PIZZAS (Todos os cards dentro de UM único .cardapio-grid) -->
         <section class="categoria">
           <h3>Pizzas 🍕</h3>
-
           <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/pizza_calabresa.jfif"
-                alt="Pizza de Calabresa"
-              />
+              <img src="img/pizza_calabresa.jfif" alt="Pizza de Calabresa" />
               <h3>Pizza de Calabresa</h3>
               <p>Molho de tomate, muçarela, calabresa fatiada e cebola.</p>
               <span class="preco">R$ 45,00</span>
-              <br>
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Pizza de Calabresa" data-preco="45.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
-          </div>
 
-          <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/pizza_4queijos.jfif"
-                alt="Pizza 4 Queijos"
-              />
+              <img src="img/pizza_4queijos.jfif" alt="Pizza 4 Queijos" />
               <h3>Pizza 4 Queijos</h3>
               <p>Muçarela, provolone, queijo prato e gorgonzola.</p>
               <span class="preco">R$ 50,00</span>
-              <br>
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Pizza 4 Queijos" data-preco="50.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
-          </div>
 
-          <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/pizza_marguerita.jfif"
-                alt="Pizza Marguerita"
-              />
+              <img src="img/pizza_marguerita.jfif" alt="Pizza Marguerita" />
               <h3>Pizza Marguerita</h3>
-              <p>
-                Molho de tomate artesanal, muçarela, fatias de tomate e
-                manjericão fresco.
-              </p>
+              <p>Molho de tomate artesanal, muçarela, fatias de tomate e manjericão fresco.</p>
               <span class="preco">R$ 42,00</span>
-              <br>
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Pizza Marguerita" data-preco="42.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
-          </div>
 
-          <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/pizza_francocatupiry.jfif"
-                alt="Pizza Frango com Catupiry"
-              />
+              <img src="img/pizza_francocatupiry.jfif" alt="Pizza Frango com Catupiry" />
               <h3>Pizza Frango com Catupiry</h3>
-              <p>
-                Molho de tomate, muçarela, frango desfiado temperado e requeijão
-                Catupiry.
-              </p>
+              <p>Molho de tomate, muçarela, frango desfiado temperado e requeijão Catupiry.</p>
               <span class="preco">R$ 48,00</span>
-              <br>
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Pizza Frango com Catupiry" data-preco="48.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
-          </div>
 
-          <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/pizza_portuguesa.jfif"
-                alt="Pizza Portuguesa"
-              />
+              <img src="img/pizza_portuguesa.jfif" alt="Pizza Portuguesa" />
               <h3>Pizza Portuguesa</h3>
-              <p>
-                Molho de tomate, muçarela, presunto, ovos cozidos, cebola, ervilha e azeitonas.
-              </p>
+              <p>Molho de tomate, muçarela, presunto, ovos cozidos, cebola, ervilha e azeitonas.</p>
               <span class="preco">R$ 46,00</span>
-              <br>
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Pizza Portuguesa" data-preco="46.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
           </div>
-
         </section>
 
+        <!-- CATEGORIA BEBIDAS -->
         <section class="categoria">
           <h3>Bebidas 🥤</h3>
-
           <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/suco_laranja.jfif"
-                alt="Suco de Laranja"
-              />
+              <img src="img/suco_laranja.jfif" alt="Suco de Laranja" />
               <h3>Suco de Laranja</h3>
               <p>Suco 100% natural da fruta (500ml).</p>
               <span class="preco">R$ 10,00</span>
-              <br>
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Suco de Laranja" data-preco="10.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
-          </div>
 
-          <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/limonada.jfif"
-                alt="Limonada Suíça"
-              />
+              <img src="img/limonada.jfif" alt="Limonada Suíça" />
               <h3>Limonada Suíça</h3>
               <p>Limão taiti batido com leite condensado e bastante gelo (500ml).</p>
               <span class="preco">R$ 11,00</span>
-              <br>
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Limonada Suíça" data-preco="11.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
-          </div>
 
-          <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/suco_morango.jfif"
-                alt="Suco de Morango"
-              />
+              <img src="img/suco_morango.jfif" alt="Suco de Morango" />
               <h3>Suco de Morango</h3>
               <p>Suco 100% natural de morango fresco com opção de leite ou água (500ml).</p>
               <span class="preco">R$ 15,00</span>
-              <br>
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Suco de Morango" data-preco="15.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
-          </div>
 
-          <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/refrigerante.jfif  "
-                alt="Refrigerante Lata"
-              />
+              <img src="img/refrigerante.jfif" alt="Refrigerante Lata" />
               <h3>Refrigerante Lata</h3>
               <p>Lata 350ml (Coca-Cola, Guaraná Antarctica ou Sprite).</p>
               <span class="preco">R$ 7,00</span>
-              <br>
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Refrigerante Lata" data-preco="7.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
           </div>
-
         </section>
 
+        <!-- CATEGORIA SOBREMESAS -->
         <section class="categoria">
           <h3>Sobremesas 🍫</h3>
-
           <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/pudim.jfif"
-                alt="Pudim de Leite"
-              />
+              <img src="img/pudim.jfif" alt="Pudim de Leite" />
               <h3>Pudim de Leite</h3>
               <p>Fatia individual de pudim artesanal com calda.</p>
               <span class="preco">R$ 12,00</span>
-              <br />
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Pudim de Leite" data-preco="12.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
-          </div>
 
-          <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/brownie.jfif"
-                alt="Brownie com Sorvete"
-              />
+              <img src="img/brownie.jfif" alt="Brownie com Sorvete" />
               <h3>Brownie com Sorvete</h3>
-              <p>Fatia individual de pudim artesanal com calda.</p>
+              <p>Brownie de chocolate meio amargo servido quente com sorvete de creme.</p>
               <span class="preco">R$ 18,00</span>
-              <br />
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Brownie com Sorvete" data-preco="18.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
-          </div>
 
-          <div class="cardapio-grid">
             <article class="card">
-              <img
-                src="img/petit_gateu.jfif"
-                alt="Petit Gâteau"
-              />
+              <img src="img/petit_gateu.jfif" alt="Petit Gâteau" />
               <h3>Petit Gâteau</h3>
               <p>Bolo quente de chocolate com recheio cremoso e bola de sorvete de baunilha.</p>
               <span class="preco">R$ 22,00</span>
-              <br />
-              <button class="btn-pedido">Pedir Agora</button>
+              <button type="button" class="btn-pedido btn-add" data-nome="Petit Gâteau" data-preco="22.00">
+                Adicionar ao Carrinho
+              </button>
             </article>
           </div>
-
         </section>
       </section>
 
       <!-- SEÇÃO 2: HORÁRIOS & ENTREGAS COM TABELA E MAPA -->
       <section id="entregas" class="container-entregas">
-        <h2>Horários & Taxas de Entrega 🛵</h2>
-
-        <br />
+        <h2>Horários &amp; Taxas de Entrega 🛵</h2>
 
         <div class="status-badge aberto">
           <span class="bolinha-status"></span>
@@ -288,8 +229,7 @@
           <tfoot>
             <tr>
               <td colspan="3">
-                * Pedidos acima de R$ 100,00 possuem frete grátis para qualquer
-                região.
+                * Pedidos acima de R$ 100,00 possuem frete grátis para qualquer região.
               </td>
             </tr>
           </tfoot>
@@ -309,131 +249,117 @@
         </div>
       </section>
 
-      <!-- SEÇÃO 3: FORMULÁRIO DE PEDIDOS & RESERVAS -->
+      <!-- SEÇÃO 3: CARRINHO DE COMPRAS E FORMULÁRIO DE PEDIDOS -->
       <section id="reserva" class="container-form">
-        <h2>Fazer Pedido ou Reserva 📆</h2>
+        <h2>Seu Carrinho &amp; Finalização 🛒</h2>
         <p class="subtitulo-form">
-          Preencha os dados abaixo para concluir seu pedido ou agendar sua mesa.
+          Confira os itens adicionados e preencha os dados abaixo para concluir seu pedido.
         </p>
 
-        <form action="#" method="post" class="form-pedido">
+        <!-- CAIXA DO CARRINHO DINÂMICO -->
+        <div id="area-carrinho" class="box-carrinho">
+          <h3>Itens no Carrinho</h3>
+          <ul id="lista-carrinho" class="lista-carrinho">
+            <li id="carrinho-vazio" class="carrinho-vazio">Seu carrinho está vazio. Clique em "Adicionar ao Carrinho" no cardápio!</li>
+          </ul>
+          <div class="resumo-total">
+            Total do Pedido: <span id="valor-total">R$ 0,00</span>
+          </div>
+        </div>
+
+        <form id="form-pedido" action="#" method="post" class="form-pedido" novalidate>
           <fieldset>
             <legend>1. Dados de Contato</legend>
             <div class="campo">
-              <label for="nome">Nome Completo:</label>
-              <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Digite seu nome"
-                required
-              />
+              <label for="nome">Nome Completo: *</label>
+              <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
+              <span class="erro-msg" id="erro-nome"></span>
             </div>
 
             <div class="campo-duplo">
               <div class="campo">
-                <label for="telefone">WhatsApp / Telefone:</label>
-                <input
-                  type="tel"
-                  id="telefone"
-                  name="telefone"
-                  placeholder="(17) 99999-9999"
-                  required
-                />
+                <label for="telefone">WhatsApp / Telefone: *</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(32) 99999-9999" required />
+                <span class="erro-msg" id="erro-telefone"></span>
               </div>
               <div class="campo">
-                <label for="email">E-mail:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="seuemail@exemplo.com"
-                  required
-                />
+                <label for="email">E-mail: *</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+                <span class="erro-msg" id="erro-email"></span>
               </div>
             </div>
           </fieldset>
 
           <fieldset>
-            <legend>2. Tipo de Solicitação</legend>
+            <legend>2. Tipo de Solicitação e Endereço (CEP)</legend>
             <div class="opcoes-radio">
-              <label
-                ><input
-                  type="radio"
-                  name="tipo_servico"
-                  value="delivery"
-                  checked
-                />
-                🛵 Entrega em Domicílio</label
-              >
-              <label
-                ><input type="radio" name="tipo_servico" value="reserva" /> 🍽️
-                Reserva de Mesa</label
-              >
+              <label>
+                <input type="radio" name="tipo_servico" value="delivery" checked />
+                🛵 Entrega em Domicílio
+              </label>
+              <label>
+                <input type="radio" name="tipo_servico" value="reserva" />
+                🍽️ Reserva de Mesa
+              </label>
+            </div>
+
+            <div class="campo-duplo" style="margin-top: 15px;">
+              <div class="campo">
+                <label for="cep">CEP para Entrega: *</label>
+                <input type="text" id="cep" name="cep" maxlength="9" placeholder="00000-000" required />
+                <span class="erro-msg" id="erro-cep"></span>
+              </div>
+              <div class="campo">
+                <label for="endereco">Endereço (Rua, Bairro, Cidade): *</label>
+                <input type="text" id="endereco" name="endereco" placeholder="Preenchido pelo CEP ou digite aqui" required />
+                <span class="erro-msg" id="erro-endereco"></span>
+              </div>
             </div>
           </fieldset>
 
           <fieldset>
-            <legend>3. Agendamento e Detalhes</legend>
+            <legend>3. Agendamento e Pagamento</legend>
             <div class="campo-triplo">
               <div class="campo">
-                <label for="data">Data Desejada:</label>
+                <label for="data">Data Desejada: *</label>
                 <input type="date" id="data" name="data" required />
+                <span class="erro-msg" id="erro-data"></span>
               </div>
               <div class="campo">
-                <label for="hora">Horário:</label>
+                <label for="hora">Horário: *</label>
                 <input type="time" id="hora" name="hora" required />
+                <span class="erro-msg" id="erro-hora"></span>
               </div>
               <div class="campo">
                 <label for="pessoas">Pessoas na Mesa:</label>
-                <input
-                  type="number"
-                  id="pessoas"
-                  name="pessoas"
-                  min="1"
-                  max="20"
-                  value="1"
-                  required
-                />
+                <input type="number" id="pessoas" name="pessoas" min="1" max="20" value="1" />
               </div>
             </div>
 
             <div class="campo">
-              <label for="pagamento">Forma de Pagamento Prevista:</label>
+              <label for="pagamento">Forma de Pagamento Prevista: *</label>
               <select id="pagamento" name="pagamento" required>
-                <option value="" disabled selected>
-                  Selecione uma opção...
-                </option>
+                <option value="" disabled selected>Selecione uma opção...</option>
                 <option value="pix">Pix</option>
                 <option value="cartao_credito">Cartão de Crédito</option>
                 <option value="cartao_debito">Cartão de Débito</option>
                 <option value="dinheiro">Dinheiro (Espécie)</option>
               </select>
+              <span class="erro-msg" id="erro-pagamento"></span>
             </div>
           </fieldset>
 
           <fieldset>
             <legend>4. Observações</legend>
             <div class="campo">
-              <label for="observacoes"
-                >Instruções de Entrega ou Observações:</label
-              >
-              <textarea
-                id="observacoes"
-                name="observacoes"
-                rows="4"
-                placeholder="Ex: Ponto da carne, sem cebola, complemento do endereço..."
-              ></textarea>
+              <label for="observacoes">Instruções de Entrega ou Observações:</label>
+              <textarea id="observacoes" name="observacoes" rows="3" placeholder="Ex: Número da casa, apartamento, sem cebola..."></textarea>
             </div>
           </fieldset>
 
           <div class="botoes-form">
-            <input
-              type="submit"
-              value="Confirmar Pedido / Reserva"
-              class="btn-pedido"
-            />
-            <input type="reset" value="Limpar Campos" class="btn-limpar" />
+            <button type="submit" class="btn-pedido">Confirmar Pedido / Reserva</button>
+            <button type="reset" id="btn-limpar-tudo" class="btn-limpar">Limpar Campos</button>
           </div>
         </form>
       </section>
