@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gerencie seus dados pessoais e endereço de entrega padrão no IFome!." />
+    <title>Meu Perfil - IFome!</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/perfilCSS.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body>
+    <!-- Cabeçalho Padronizado -->
+    <header id="topo">
+        <h1><a href="index.html">IFome!</a></h1>
+
+        <!-- Menu de Navegação apontando de volta para o index.html -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html#cardapio">Cardápio 🍽️</a></li>
+                <li><a href="index.html#entregas">Horários &amp; Entregas 🛵</a></li>
+                <li><a href="index.html#reserva">Carrinho &amp; Pedido 📆</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botões de Usuário -->
+        <div class="icones-usuario">
+            <a href="perfil.html" class="btn-icone" aria-label="Perfil">
+                <span class="material-symbols-outlined">person</span>
+            </a>
+            <a href="index.html#favoritos" class="btn-icone" aria-label="Favoritos">
+                <span class="material-symbols-outlined">favorite</span>
+            </a>
+            <a href="index.html#area-carrinho" class="btn-icone" aria-label="Carrinho">
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container-form">
+        <!-- Resumo do Usuário -->
+        <section class="box-carrinho perfil-cabecalho">
+            <div class="perfil-info">
+                <span class="material-symbols-outlined avatar-icone">account_circle</span>
+                <div>
+                    <h2 id="perfil-nome-exibicao">Visitante IFome!</h2>
+                    <p class="subtitulo-perfil">Gerencie seus dados pessoais e endereço padrão para entregas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulário de Dados Cadastrais -->
+        <section>
+            <form id="form-perfil" class="form-pedido" novalidate>
+                <fieldset>
+                    <legend>1. Dados Pessoais</legend>
+                    <div class="campo">
+                        <label for="nome">Nome Completo: *</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required
+                            aria-describedby="erro-nome" />
+                        <span class="erro-msg" id="erro-nome" role="alert"></span>
+                    </div>
+
+                    <div class="campo-duplo">
+                        <div class="campo">
+                            <label for="perfil-telefone">WhatsApp / Telefone: *</label>
+                            <input type="tel" id="perfil-telefone" name="telefone" placeholder="(32) 99999-9999"
+                                required />
+                        </div>
+                        <div class="campo">
+                            <label for="perfil-email">E-mail: *</label>
+                            <input type="email" id="perfil-email" name="email" placeholder="seuemail@exemplo.com"
+                                required />
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Endereço Principal de Entrega</legend>
+                    <div class="campo-duplo">
+                        <div class="campo">
+                            <label for="perfil-cep">CEP: *</label>
+                            <input type="text" id="perfil-cep" name="cep" maxlength="9" placeholder="00000-000"
+                                required />
+                        </div>
+                        <div class="campo">
+                            <label for="perfil-endereco">Logradouro, Bairro e Cidade: *</label>
+                            <input type="text" id="perfil-endereco" name="endereco"
+                                placeholder="Rua, Bairro, Cidade - UF" required />
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="perfil-complemento">Número e Complemento:</label>
+                        <input type="text" id="perfil-complemento" name="complemento"
+                            placeholder="Ex: Nº 120, Apto 302" />
+                    </div>
+                </fieldset>
+
+                <div class="botoes-form">
+                    <a href="index.html" class="btn-limpar" style="text-decoration: none;">Voltar à Loja</a>
+                    <button type="submit" class="btn-pedido">Salvar Alterações</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 IFome! - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script para salvar e carregar os dados no navegador (localStorage) -->
+    <script>
+        const formPerfil = document.getElementById('form-perfil');
+        const tituloNome = document.getElementById('perfil-nome-exibicao');
+
+        // Carrega os dados salvos anteriormente ao abrir a página
+        window.addEventListener('DOMContentLoaded', () => {
+            const dadosSalvos = JSON.parse(localStorage.getItem('usuarioIFome'));
+            if (dadosSalvos) {
+                document.getElementById('perfil-nome').value = dadosSalvos.nome || '';
+                document.getElementById('perfil-telefone').value = dadosSalvos.telefone || '';
+                document.getElementById('perfil-email').value = dadosSalvos.email || '';
+                document.getElementById('perfil-cep').value = dadosSalvos.cep || '';
+                document.getElementById('perfil-endereco').value = dadosSalvos.endereco || '';
+                document.getElementById('perfil-complemento').value = dadosSalvos.complemento || '';
+                if (dadosSalvos.nome) {
+                    tituloNome.textContent = dadosSalvos.nome;
+                }
+            }
+        });
+
+        // Salva os dados no localStorage ao enviar
+        formPerfil.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nome = document.getElementById('perfil-nome').value.trim();
+            const email = document.getElementById('perfil-email').value.trim();
+
+            if (!nome || !email) {
+                alert('Por favor, preencha pelo menos o Nome e o E-mail.');
+                return;
+            }
+
+            const usuario = {
+                nome,
+                telefone: document.getElementById('perfil-telefone').value.trim(),
+                email,
+                cep: document.getElementById('perfil-cep').value.trim(),
+                endereco: document.getElementById('perfil-endereco').value.trim(),
+                complemento: document.getElementById('perfil-complemento').value.trim()
+            };
+
+            localStorage.setItem('usuarioIFome', JSON.stringify(usuario));
+            tituloNome.textContent = nome;
+            alert('Dados do perfil salvos com sucesso!');
+        });
+    </script>
+</body>
+
+</html>
