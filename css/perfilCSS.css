@@ -1,0 +1,27 @@
+/* PÁGINA DE PERFIL */
+.perfil-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.perfil-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.perfil-info h2 {
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.subtitulo-perfil {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.avatar-icone {
+  font-size: 56px;
+  color: #ff4e00;
+}
