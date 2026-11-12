@@ -90,6 +90,46 @@ nav a {
   font-weight: 600;
 }
 
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Alinha os itens lado a lado */
+}
+
+.navigation li {
+  flex: 1; /* Faz cada item ocupar o mesmo espaço */
+  padding: 0; /* Garante que o <li> não tenha área morta ao redor do link */
+}
+
+.navigation a {
+  display: block; /* Faz o link preencher toda a largura do <li> */
+  width: 100%;
+  padding: 15px 20px; /* O padding dentro do <a> aumenta a área clicável */
+  text-align: center;
+  text-decoration: none;
+  background-color: #ff4e00;
+  color: white;
+  box-sizing: border-box; /* Evita que o padding estoure a largura */
+}
+
+.navigation a:hover {
+  background-color: #d90429;
+}
+
+button,
+.navigation a {
+  background-color: #ff4e00;
+  color: white;
+  transition: background-color 0.3s ease; /* Define a transição suave na cor de fundo */
+}
+
+/* Estado ao passar o mouse */
+button:hover,
+.navigation a:hover {
+  background-color: #d90429;
+}
+
 footer {
   text-align: center;
 }
