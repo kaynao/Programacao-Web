@@ -1,0 +1,436 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f9fa;
+  padding-bottom: 70px;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #ff4e00, #d90429);
+  color: white;
+  padding: 0.8rem 2rem;
+  margin-bottom: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+h1 a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  padding: 8px 10px;
+  border-top: 1px solid #e9ecef;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+}
+
+nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  padding: 6px 4px;
+  border-radius: 8px;
+  color: #2b2d42;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Alinha os itens lado a lado */
+}
+
+.navigation li {
+  flex: 1; /* Faz cada item ocupar o mesmo espaço */
+  padding: 0; /* Garante que o <li> não tenha área morta ao redor do link */
+}
+
+.navigation a {
+  display: block; /* Faz o link preencher toda a largura do <li> */
+  width: 100%;
+  padding: 15px 20px; /* O padding dentro do <a> aumenta a área clicável */
+  text-align: center;
+  text-decoration: none;
+  background-color: #ff4e00;
+  color: white;
+  box-sizing: border-box; /* Evita que o padding estoure a largura */
+}
+
+.navigation a:hover {
+  background-color: #d90429;
+}
+
+button,
+.navigation a {
+  background-color: #ff4e00;
+  color: white;
+  transition: background-color 0.3s ease; /* Define a transição suave na cor de fundo */
+}
+
+/* Estado ao passar o mouse */
+button:hover,
+.navigation a:hover {
+  background-color: #d90429;
+}
+
+footer {
+  text-align: center;
+}
+
+/* BOTÕES */
+
+/* Botões gerais (ex: "Calcular Frete") */
+.btn-pedido,
+.btn-horarios,
+.btn-cardapio {
+  background-color: #ff4e00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  display: inline-block;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.btn-pedido:hover,
+.btn-horarios:hover,
+.btn-cardapio:hover {
+  background-color: #d90429;
+  transform: scale(1.05);
+}
+
+/* Botões dentro da barra de navegação inferior */
+nav .btn-pedido,
+nav .btn-horarios,
+nav .btn-cardapio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  color: #2b2d42;
+  padding: 6px 4px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+nav .btn-pedido:hover,
+nav .btn-horarios:hover,
+nav .btn-cardapio:hover {
+  background-color: #ffe6e0;
+  color: #d90429;
+  transform: none;
+}
+
+/* Ícones do header (favoritos, carrinho, perfil) */
+.btn-icone {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.btn-icone:hover {
+  background-color: white;
+  color: #d90429;
+  transform: scale(1.1);
+}
+
+.btn-icone .material-symbols-outlined {
+  color: inherit;
+}
+
+.icones-usuario {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* CARDS */
+
+.card {
+  background-color: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #2b2d42;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+/* CARDÁPIO */
+
+.cardapio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 1rem;
+}
+
+#cardapio {
+  padding: 2rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#cardapio,
+#entregas,
+#reserva {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 600px) {
+  #cardapio,
+  #entregas,
+  #reserva {
+    scroll-margin-top: 220px;
+  }
+}
+
+.categoria {
+  margin-bottom: 2.5rem;
+}
+
+.categoria h3 {
+  font-size: 1.4rem;
+  color: #2b2d42;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #ff4e00;
+  display: inline-block;
+}
+
+/* ENTREGAS */
+
+.container-entregas {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.secao-status h2 {
+  color: #d90429;
+  margin-bottom: 1rem;
+}
+
+.secao-busca-frete {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.form-frete label {
+  font-weight: bold;
+  color: #2b2d42;
+}
+
+.grupo-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.grupo-input input[type="text"] {
+  padding: 10px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  width: 280px;
+  font-size: 1rem;
+}
+
+.tabela-entregas {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2rem 0;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tabela-entregas caption {
+  caption-side: top;
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.tabela-entregas th,
+.tabela-entregas td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.tabela-entregas thead {
+  background-color: #d90429;
+  color: white;
+}
+
+.tabela-entregas tfoot {
+  background-color: #f8f9fa;
+  font-style: italic;
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.container-mapa {
+  margin: 1rem 0 2rem;
+}
+
+/* STATUS DA LOJA */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.bolinha-status {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-badge.aberto {
+  background-color: #e6f4ea;
+  color: #137333;
+  border: 1px solid #ceead6;
+}
+
+.status-badge.aberto .bolinha-status {
+  background-color: #34a853;
+  box-shadow: 0 0 8px #34a853;
+}
+
+.status-badge.fechado {
+  background-color: #f1f3f4;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+}
+
+.status-badge.fechado .bolinha-status {
+  background-color: #9aa0a6;
+}
+
+/* ÍCONES */
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
